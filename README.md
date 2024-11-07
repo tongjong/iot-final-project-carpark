@@ -1,1 +1,2 @@
-# iot-final-project-carpark
+# Project description
+This project is created to use sensors and displays to provide information on available parking bays in the Moondalup car park, information on weather and other community messages.
