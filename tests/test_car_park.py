@@ -8,21 +8,21 @@ class TestCarPark(unittest.TestCase):
       def test_car_park_initialized_with_all_attributes(self):
          self.assertIsInstance(self.car_park, CarPark)
          self.assertEqual(self.car_park.location, "123 Example Street")
-         self.assertEqual(self.car_park.capacity, 100)
-         self.assertEqual(self.car_park.plates, [])
+         self.assertEqual(self.car_park.available_car_bays, 100)
+         self.assertEqual(self.car_park.car_plates, [])
          self.assertEqual(self.car_park.sensors, [])
          self.assertEqual(self.car_park.displays, [])
          self.assertEqual(self.car_park.available_bays, 100)
 
       def test_add_car(self):
          self.car_park.add_car("FAKE-001")
-         self.assertEqual(self.car_park.plates, ["FAKE-001"])
+         self.assertEqual(self.car_park.car_plates, ["FAKE-001"])
          self.assertEqual(self.car_park.available_bays, 99)
 
       def test_remove_car(self):
          self.car_park.add_car("FAKE-001")
          self.car_park.remove_car("FAKE-001")
-         self.assertEqual(self.car_park.plates, [])
+         self.assertEqual(self.car_park.car_plates, [])
          self.assertEqual(self.car_park.available_bays, 100)
 
       def test_overfill_the_car_park(self):

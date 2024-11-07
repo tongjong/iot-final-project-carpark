@@ -30,9 +30,9 @@ class CarPark:
         self.update_displays()
 
     def update_displays(self):
-        data = self.available_bays
+        data = {"available_bays": self.available_bays}
         for display in self.displays:
-            display.display(data)
+            display.update(data)
 
     @property
     def available_bays(self):
