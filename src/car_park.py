@@ -25,10 +25,14 @@ class CarPark:
         self.car_plates.append(car_plate)
         self.update_displays()
 
+    def remove_car(self, car_plate: str):
+        self.car_plates.remove(car_plate)
+        self.update_displays()
+
     @property
     def available_bays(self):
-        return self.available_car_bays - len(self.car_plates)
-
+        available_bays = self.available_car_bays - len(self.car_plates)
+        return 0 if available_bays < 0 else available_bays
 
 
 
