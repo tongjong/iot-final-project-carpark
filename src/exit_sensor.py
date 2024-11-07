@@ -7,9 +7,9 @@ class ExitSensor(Sensor):
     def __str__(self):
         return f"Exir Sensor Active Status: {self.is_active}? 'Active' : 'Inactive'"
 
-    def update_car_park(self, plate: str) -> None:
+    def update_car_park(self, plate: str) -> str:
         self.car_park.remove_car(plate)
-        print(f"Outgoing 🚗 vehicle detected. Plate: {plate}")
+        return f"Outgoing 🚗 vehicle detected. Plate: {plate}"
 
     def _scan_plate(self) -> str:
         return random.choice(self.car_park.car_plates)
