@@ -3,7 +3,7 @@ from sensor import Sensor
 
 
 class CarPark:
-    def __init__(self, locations, capacity: int, displays: list[Display]=None, sensors: list[Sensor]=None):
+    def __init__(self, locations: str, capacity: int, displays: list[Display]=None, sensors: list[Sensor]=None):
         self.location = locations
         self.displays = displays or []
         self.sensors = sensors or []

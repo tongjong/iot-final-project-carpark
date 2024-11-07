@@ -8,7 +8,7 @@ class Display:
 
     def update(self, data: dict):
         for key, value in data.items():
-            return f"{key}: {value}"
+            return f"{value}"
 
 
 
