@@ -1,5 +1,6 @@
 from enum import Enum
 from abc import ABC, abstractmethod
+from typing import Union
 
 class DisplayType(Enum):
     WEATHER = 1
@@ -7,7 +8,7 @@ class DisplayType(Enum):
     COMMUNITY = 3
 
 class Display(ABC):
-    def __init__(self, message: [str,int]):
+    def __init__(self, message: Union[str,int]):
         self.message = message
 
     @abstractmethod
