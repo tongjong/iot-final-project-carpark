@@ -5,9 +5,10 @@ from abc import ABC, abstractmethod
 
 
 class Sensor(ABC):
-    def __init__(self, car_park: CarPark, is_active: bool=False):
+    def __init__(self,car_id: int, car_park: CarPark, is_active: bool=False):
         self.car_park = car_park
         self.is_active = is_active
+        self.car_id = car_id
 
     @abstractmethod
     def update_car_park(self, plate: str):

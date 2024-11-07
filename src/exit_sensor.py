@@ -1,4 +1,5 @@
 import random
+from typing import override
 
 from sensor import Sensor
 
@@ -12,3 +13,8 @@ class ExitSensor(Sensor):
 
     def _scan_plate(self) -> str:
         return random.choice(self.car_park.car_plates)
+
+    @override
+    def detect_vehicle(self) -> None:
+        plate = self._scan_plate()
+        self.update_car_park(plate)

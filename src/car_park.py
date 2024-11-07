@@ -3,11 +3,11 @@ from sensor import Sensor
 
 
 class CarPark:
-    def __init__(self, locations, displays: list[Display]=None, sensors: list[Sensor]=None):
+    def __init__(self, locations, capacity: int, displays: list[Display]=None, sensors: list[Sensor]=None):
         self.location = locations
         self.displays = displays or []
         self.sensors = sensors or []
-        self.available_car_bays = 150
+        self.available_car_bays = capacity
         self.car_plates = []
 
     def __str__(self):
@@ -28,6 +28,11 @@ class CarPark:
     def remove_car(self, car_plate: str):
         self.car_plates.remove(car_plate)
         self.update_displays()
+
+    def update_displays(self):
+        data = self.available_bays
+        for display in self.displays:
+            display.display(data)
 
     @property
     def available_bays(self):

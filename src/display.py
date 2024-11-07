@@ -1,19 +1,16 @@
-from enum import Enum
-from abc import ABC, abstractmethod
-from typing import Union
 
-class DisplayType(Enum):
-    WEATHER = 1
-    AVAILABLE_CAR_BAYS = 2
-    COMMUNITY = 3
-
-class Display(ABC):
-    def __init__(self, message: Union[str,int]):
+class Display:
+    def __init__(self, display_id: int, message: str, is_on: bool, car_park):
+        self.display_id = display_id
         self.message = message
+        self.is_on = is_on
+        self.car_park = car_park
 
-    @abstractmethod
-    def display(self):
-        pass
+    def update(self, data: dict):
+        for key, value in data.items():
+            return f"{key}: {value}"
+
+
 
 
 
